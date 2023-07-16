@@ -3,7 +3,7 @@ A Genetic Algorithm (GA) was designed to optimally generate non-linguistic utter
 For the GA, a 45-bit binary genotype was designed that contained four notes of 11 bits each, with one extra bit at the end of the genotype representing the instrument.
 Sounds were generated using MIDI encoding and the python packages mido and midiUTIL from pypi. In each of the four 11-bit notes, 5 bits were for pitch, 3 bits were for duration in beats, 2 bits were for pitch-bend (bending a single pitch up or down for a given note), and 1 bit was for volume (0 or 100).
 
-![image](https://github.com/AhmedKhota/Data-Science-Projects/assets/139664971/970024b2-0c39-40ed-b25c-a53b36114ec9)
+![genotype](https://github.com/AhmedKhota/Data-Science-Projects/assets/139664971/d872f573-8cd6-4c04-a80e-0f75d9ffab60)
 
 The GA uses the Tournament Selection method with a Tournament size of 16, and two-point crossover, to evolve successive generations. The population size was set to 400 and with each new generation, the children produced by the selected parents completely replaced them in the new generation.
 
