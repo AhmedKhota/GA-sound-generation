@@ -110,20 +110,6 @@ class Population: #play sound and get rating (fitness of one sound)
                 myMIDI.addPitchWheelEvent(0, 0, time, 8000)
                 myMIDI.addPitchWheelEvent(0, 0, note.duration/2, -8000)
             filenotes += note.note
-        #pitch bend stuff goes here    
-        # t = [int(nlu.genes[i:i+2], 2) for i in range(5, 24, 8)]
-        # p = [int(nlu.genes[i:i+5], 2) for i in range(0, 25, 8)]
-
-        # if nlu.pitchbend == "1":
-        #     for i in range(3):
-        #         if p[i+1] > p[i]:
-        #             myMIDI.addPitchWheelEvent(0, 0, 0, -8000)
-        #             myMIDI.addPitchWheelEvent(0, 0, t[i]/2, 8000)
-        #         else:
-        #             myMIDI.addPitchWheelEvent(0, 0, 0, 8000)
-        #             myMIDI.addPitchWheelEvent(0, 0, t[i]/2, -8000)
-
-
         dest = "F:/GA_midis/{0}/".format(str(generation))#added generation folder
         filename = nlu.hexname().replace("0x",str(generation)) +".mid"  
         with open(os.path.join(dest,filename), 'wb') as binfile: #need to increment filename later in order to save multiple files per generation
@@ -138,13 +124,6 @@ class Population: #play sound and get rating (fitness of one sound)
             
     def evaluate(self, midifile, nlu: NLU): # to play and get rating
         self.play(nlu,midifile)
-        # while True:
-        #     nlu.fitness = input("Please rate the sound from 1-5: ")
-        #     if nlu.fitness.isdigit() and int(nlu.fitness) in range(1, 6):
-        #     # user input is valid
-        #         break
-        #     else:
-        #         print("Invalid input. Please enter a number between 1 and 5.")
         while True:
             print("Please rate the sound from 1-5: ")
             ch = msvcrt.getch()
@@ -155,9 +134,6 @@ class Population: #play sound and get rating (fitness of one sound)
                 break
             else:
                 print("Invalid input. Please enter a number between 1 and 5.")
-
-# continue with the rest of your code using the validated user input
-
     
     def get_the_fittest(self, n: int):
         self.__sort_by_fitness()
