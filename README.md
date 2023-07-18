@@ -7,7 +7,7 @@ Sounds were generated using MIDI encoding and the python packages mido and midiU
 
 The GA uses the Tournament Selection method with a Tournament size of 16, and two-point crossover, to evolve successive generations. The population size was set to 400 and with each new generation, the children produced by the selected parents completely replaced them in the new generation.
 
-Firstly, randomly generated sounds, using the same genotype design, were evaluated manually, not using the GA, by listening to them and assigning a fitness value from 1 to 5. 3000 such sounds were evaluated and used as training data for a neural network (GA_neural_net.py) to learn how to evaluate fitness of such genotypes.
+Firstly, randomly generated sounds, using the same genotype design, were evaluated manually, not using the GA, by listening to them and assigning a fitness value from 1 to 5. 3000 such sounds were evaluated and used as training data for a neural network (GANNkfold.py) to learn how to evaluate the fitness of such genotypes.
 
 Two neural network models were used, one using a linear activation function for the output layer and one using a sigmoid activation function for the output layer. The
 neural network layout is shown below.
@@ -18,4 +18,8 @@ Using 10-fold cross-validation, the neural network was trained to evaluate the f
 
 The neural network model was then used to automatically evaluate the fitness of individuals produced by the GA over successive generations.
 
-After the GA generated fit individuals (sounds), the fittest individuals were selected and the midi files were converted to wav files using the midi_to_wav.py script
+After the GA generated fit individuals (sounds), the fittest individuals were selected and midi files were generated and saved using the MidiSaveOnly.py script. The midi files were converted to wav files using the midi_to_wav.py script. 
+
+
+
+
