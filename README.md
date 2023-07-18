@@ -20,6 +20,6 @@ The neural network model was then used to automatically evaluate the fitness of 
 
 After the GA generated fit individuals (sounds), the fittest individuals were selected and midi files were generated and saved using the MidiSaveOnly.py script. The midi files were converted to wav files using the midi_to_wav.py script. 
 
+The RandomForestModel.py script was then used to predict the emotional Valence and Arousal of the GA-generated sounds. The RandomForestModel.py script is from the Valence Arousal Inference Project. An experiment was conducted, using 80 of the GA sounds, where human raters evaluated the emotional Valence and Arousal of the sounds on a seven-point scale. The full flow of operations is shown below.
 
-
-
+![GAmodel](https://github.com/AhmedKhota/GA-sound-generation/assets/139664971/17d48b81-aab6-4113-b3aa-c8ff6be7ffbc)
