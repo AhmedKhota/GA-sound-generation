@@ -9,9 +9,11 @@ The GA uses the Tournament Selection method with a Tournament size of 16, and tw
 
 Firstly, randomly generated sounds, using the same genotype design, were evaluated manually, not using the GA, by listening to them and assigning a fitness value from 1 to 5. 3000 such sounds were evaluated and used as training data for a neural network to learn how to evaluate fitness of such genotypes.
 
-A neural network model was then used to automatically evaluate the fitness of individuals produced by the GA over successive generations.
-
 Two neural network models were used, one using a linear activation function for the output layer and one using a sigmoid activation function for the output layer. The
 neural network layout is shown below.
 
 ![GANNlayout](https://github.com/AhmedKhota/GA-sound-generation/assets/139664971/e82eea15-8f51-4c77-88d6-9c08a62aad5d)
+
+Using 10-fold cross-validation, the neural network was trained to evaluate the fitness of the genotypes and achieved an average Mean Absolute Error (MAE) of 0.136 on the normalized rating scale, and a correlation between actual and predicted values of 0.725. 
+
+The neural network model was then used to automatically evaluate the fitness of individuals produced by the GA over successive generations.
