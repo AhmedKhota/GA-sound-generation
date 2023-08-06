@@ -14,7 +14,7 @@ neural network layout is shown below.
 
 ![GANNlayout](https://github.com/AhmedKhota/GA-sound-generation/assets/139664971/e82eea15-8f51-4c77-88d6-9c08a62aad5d)
 
-Using 10-fold cross-validation, the neural network was trained to evaluate the fitness of the genotypes and achieved an average Mean Absolute Error (MAE) of 0.136 on the normalized rating scale, and a correlation between actual and predicted values of 0.725. 
+Using 10-fold cross-validation, the neural network was trained to evaluate the fitness of the genotypes and achieved an average Mean Absolute Error (MAE) of 0.136 on the normalized rating scale, and a correlation between actual and predicted values of 0.725. A single run of the neural network is shown below to demonstrate it training correctly and reducing loss for both the training and validation data sets.
 
 ![NewNNv2](https://github.com/AhmedKhota/GA-sound-generation/assets/139664971/c16b7f54-60d1-42dc-850f-8b7b90ab379b)
 
