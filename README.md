@@ -16,6 +16,8 @@ neural network layout is shown below.
 
 Using 10-fold cross-validation, the neural network was trained to evaluate the fitness of the genotypes and achieved an average Mean Absolute Error (MAE) of 0.136 on the normalized rating scale, and a correlation between actual and predicted values of 0.725. 
 
+![NewNNv2](https://github.com/AhmedKhota/GA-sound-generation/assets/139664971/c16b7f54-60d1-42dc-850f-8b7b90ab379b)
+
 The neural network model was then used to automatically evaluate the fitness of individuals produced by the GA over successive generations.
 
 Using a population size of 400, the GA was run and reached convergence within 30 generations. 
