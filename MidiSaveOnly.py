@@ -78,26 +78,7 @@ class MidiFile:
             print("saving ", str(os.path.join(dest,filename)))
             myMIDI.writeFile(binfile)
         return os.path.join(dest,filename)
-    
-    def play(self, nlu): #no longer needed
-        midifile = self.save_midi(nlu)
-        port = mido.open_output()
-        mid = mido.MidiFile(midifile)
-        for msg in mid.play():
-            port.send(msg)
-        time.sleep(1)
-            
 
-    def evaluate(self, nlu: NLU): # to play and get rating
-        self.play(nlu)
-        while True:
-            try:
-                nlu.fitness = int(input("please rate the sound from 1-5"))
-            except ValueError:
-                print("Invalid input. Please enter a value between 1-5 ")
-                continue
-            else:
-                break
 
 if __name__ == '__main__':
 
@@ -105,7 +86,6 @@ if __name__ == '__main__':
     data = pd.read_csv("BinsforVA.csv")
     print(data)
     data = np.squeeze(np.array(data.values.tolist()))
-    print(data[0])
     for binstring in data:
         nlu = NLU(binstring)
         midifile = MidiFile(nlu)
