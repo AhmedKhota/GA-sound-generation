@@ -32,3 +32,5 @@ The coverage of the Valence Arousal 2d space by the generated GA sounds is shown
 
 After comparing the Valence and Arousal ratings from the human subjects and the inferences from the random forest model, the Mean Absolute Error was found to be 0.117 for Valence and 0.067 for Arousal. Correlation coefficients between experiment ratings and inferences were 0.22 for Valence and 0.63 for Arousal.
 
+Since the random forest model was trained on sampled sounds from robots like R2D2 and WallE etc. the fact that the model inferences and human ratings corresponded reasonably well implies that the generated sounds were at least comparable if not useful candidates to be used as robot non-linguistic utterances.
+
