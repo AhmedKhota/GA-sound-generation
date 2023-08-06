@@ -18,8 +18,17 @@ Using 10-fold cross-validation, the neural network was trained to evaluate the f
 
 The neural network model was then used to automatically evaluate the fitness of individuals produced by the GA over successive generations.
 
+Using a population size of 400, the GA was run and reached convergence within 30 generations. 
+
 After the GA generated fit individuals (sounds), the fittest individuals were selected and midi files were generated and saved using the MidiSaveOnly.py script. The midi files were converted to wav files using the midi_to_wav.py script. 
 
 The RandomForestModel.py script was then used to predict the emotional Valence and Arousal of the GA-generated sounds. The RandomForestModel.py script is from the Valence Arousal Inference Project. An experiment was conducted, using 80 of the GA sounds, where human raters evaluated the emotional Valence and Arousal of the sounds on a seven-point scale. The full flow of operations is shown below.
 
 ![GAmodel](https://github.com/AhmedKhota/GA-sound-generation/assets/139664971/17d48b81-aab6-4113-b3aa-c8ff6be7ffbc)
+
+The coverage of the Valence Arousal 2d space by the generated GA sounds is shown in the below hex-plot. The figure shows 48000 fit individuals. 
+
+![snapshot_4](https://github.com/AhmedKhota/GA-sound-generation/assets/139664971/0ff2b8da-8888-4bd6-92f7-77a83b45d30c)
+
+After comparing the Valence and Arousal ratings from the human subjects and the inferences from the random forest model, the Mean Absolute Error was found to be 0.117 for Valence and 0.067 for Arousal. Correlation coefficients between experiment ratings and inferences were 0.22 for Valence and 0.63 for Arousal.
+
