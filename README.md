@@ -3,7 +3,7 @@ A Genetic Algorithm (GA) was designed to optimally generate non-linguistic utter
 For the GA, a 45-bit binary genotype was designed that contained four notes of 11 bits each, with one extra bit at the end of the genotype representing the instrument.
 Sounds were generated using MIDI encoding and the python packages mido and midiUTIL from pypi. In each of the four 11-bit notes, 5 bits were for pitch, 3 bits were for duration in beats, 2 bits were for pitch-bend (bending a single pitch up or down for a given note), and 1 bit was for volume (0 or 100).
 
-![genotype](/images/genotype.jpg)
+![Genotype](/images/genotype.jpg)
 
 The GA uses the Tournament Selection method with a Tournament size of 16, and two-point crossover, to evolve successive generations. The population size was set to 400 and with each new generation, the children produced by the selected parents completely replaced them in the new generation.
 
@@ -12,11 +12,11 @@ Firstly, randomly generated sounds, using the same genotype design, were evaluat
 Two neural network models were used, one using a linear activation function for the output layer and one using a sigmoid activation function for the output layer. The
 neural network layout is shown below.
 
-![GANNlayout](/images/GANNlayout.jpg)
+![Neural Network Layout](/images/GANNlayout.jpg)
 
 Using 10-fold cross-validation, the neural network was trained to evaluate the fitness of the genotypes and achieved an average Mean Absolute Error (MAE) of 0.136 on the normalized rating scale, and a correlation between actual and predicted values of 0.725. A single run of the neural network is shown below to demonstrate it training correctly and reducing loss for both the training and validation data sets.
 
-![NewNNv2](/images/NN2.png)
+![Neural Network Results](/images/NN2.png)
 
 The neural network model was then used to automatically evaluate the fitness of individuals produced by the GA over successive generations.
 
@@ -26,11 +26,11 @@ After the GA generated fit individuals (sounds), the fittest individuals were se
 
 The RandomForestModel.py script was then used to predict the emotional Valence and Arousal of the GA-generated sounds. The RandomForestModel.py script is from the Valence Arousal Inference Project. An experiment was conducted, using 80 of the GA sounds, where human raters evaluated the emotional Valence and Arousal of the sounds on a seven-point scale. The full flow of operations is shown below.
 
-![GAmodel](/images/GAmodel.jpg)
+![GA model](/images/GAmodel.jpg)
 
 The coverage of the Valence Arousal 2d space by the generated GA sounds is shown in the below hex-plot. The figure shows 48000 fit individuals. 
 
-![snapshot_4](/images/snapshot_4.png)
+![Hexplot](/images/snapshot_4.png)
 
 After comparing the Valence and Arousal ratings from the human subjects and the inferences from the random forest model, the Mean Absolute Error was found to be 0.117 for Valence and 0.067 for Arousal. Correlation coefficients between experiment ratings and inferences were 0.22 for Valence and 0.63 for Arousal.
 
