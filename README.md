@@ -28,9 +28,6 @@ The RandomForestModel.py script was then used to predict the emotional Valence a
 
 ![GA model](/images/GAmodel.jpg)
 
-The coverage of the Valence Arousal 2d space by the generated GA sounds is shown in the below hex-plot. The figure shows 48000 fit individuals. 
-
-![Hexplot](/images/snapshot_4.png)
 
 After comparing the Valence and Arousal ratings from the human subjects and the inferences from the random forest model, the Mean Absolute Error was found to be 0.117 for Valence and 0.067 for Arousal. Correlation coefficients between experiment ratings and inferences were 0.22 for Valence and 0.63 for Arousal.
 
